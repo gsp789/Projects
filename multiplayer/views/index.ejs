@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="multiplayer">
+<head>
+<script type="text/javascript" src="/javascripts/angular/angular.js" ></script>
+<script type="text/javascript" src="/javascripts/playersController.js" > </script>
+<link rel="stylesheet" href="./stylesheets/style.css" > </link>
+</head>
+<body ng-controller = "PlayersController as playersController">
+	<header id="logo">
+		<h1>Welcome to Battleship</h1>
+	</header>
+	<br/>
+	<br/>
+	
+	<span id="errorspan" class="error">{{ playersController.errorMessage }}</span>
+	<div id ="content">			
+		<form>
+			Hello <%= name %>,
+			<label for="name">Please enter your name:</label>
+			<input type="text" name="name" ng-model="playersController.player.name" id="name" placeholder="Your Name" required> </input>
+			<input type="submit" ng-show="playersController.nameEntered();" ng-click="playersController.addPlayer();" value="Join"> </input>
+		</form>
+	</div>
+	
+	<div id="playersonline">
+	
+		Welcome {{ playersController.currentPlayer.name }},
+		Below are the players available online.
+		<table class="data">
+		<tr>
+			<th>Name</th><th>Request</th>
+		</tr>
+		<tr ng-repeat="player in playersController.players">
+			<td> {{ player.name }} </td>
+			<td>			<input type="submit" ng-disabled="playersController.ifAlreadyRequested(player);" value="Request" ng-click="playersController.requestPlayer(player);"> </input> </td>
+			<td>			<input type="submit" ng-show="playersController.gotPlayRequest(player);" value="Accept the Request" ng-click="playersController.acceptRequest(player);"> </input> </td>
+			<td>			<input type="submit" ng-show="playersController.gotPlayRequest(player);" value="Reject the Request" ng-click="playersController.rejectRequest(player);"> </input> </td>
+		</tr>
+	</table>
+		
+	</div>
+
+	<div id="gameboard">
+		<h3 align = "center"><span ng-bind="playersController.currentPlayer.gameState" id="status"></span><span ng-show="playersController.isGameOver();">{{ playersController.gameResult(); }}</span></h3>
+		<h3 align = "center" ng-show="playersController.didGameStart();">My Score : <span ng-bind="playersController.currentPlayer.myScore"></span>  Opponent Score : <span ng-bind="playersController.currentPlayer.opponentScore"></span></h3>
+		<table class="grid">
+			<%
+			var row = 0;
+			for(row = 0; row < 10 ; row++){ %>
+				<tr id="<%=row%>">
+					<% var col = 0;
+					for(col = 0; col < 10 ; col++){ %>
+						<td id="<%=row%><%=col%>" ng-disabled = "playersController.disableTableCells(<%=row%><%=col%>);" ng-click="playersController.getCell('<%=row%><%=col%>')"></td>
+					<%}%>
+				</tr>
+			<%}%>
+		</table>
+	
+	<h3 align="center" id="gamestartbutton">
+		<input type="submit" ng-disabled="playersController.shipsNotChoosen();" value="Start the Game" ng-click="playersController.startTheGame();">
+		</input>
+	</h3>
+		
+	</div>
+	
+	
+</body>
+</html>
