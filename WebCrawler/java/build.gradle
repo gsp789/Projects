@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories{
+ mavenCentral()
+}
+
+dependencies{
+ compile group: 'org.jsoup', name: 'jsoup', version: '1.8.1'
+ compile group: 'org.multiverse', name: 'multiverse-core', version: '0.7.0'
+}
+
+defaultTasks 'clean','test','execute'
+
+task execute(type:JavaExec){
+ main = 'Linkcount'
+ classpath = sourceSets.main.runtimeClasspath
+}
