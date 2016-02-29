@@ -1,5 +1,3 @@
-Demo: In class August 10th. Final deliverable August 11th 11:59PM.
-
 The Public Works Department wants you to build an application to manage their rural area. Their workers will carry a mobile device as they drive around the area. The area is rather remote and their internet connection is spotty. The application must be usable to a reasonable extent even when they're disconnected.
 
 The application has one page - create work order.
@@ -18,12 +16,3 @@ If the device is not connected to the network, the data is stored locally on the
 
 The above is the client side. For the server side, create a node.js application that will receive the data from the client side and simply display it on the console.
 
-Total [30]: 30
-Work order entry and validation (details, location, name) [5]:
-App sends data to server when connected [5]:
-App stores data locally when disconnected [5]:
-App sends stored data to server after being reconnected [5]:
-Code quality [5]:
-Features presented and explained well [5]:
-Comments:
-Nice demo.
