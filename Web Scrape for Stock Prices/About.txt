@@ -1,0 +1,28 @@
+A user has stocks in many companies. This project helps in finding the net asset value of their stocks and display it.
+
+The program will read a file which has details of stock symbols and the number of shares of each stock the user owns.
+For example
+XYZ1 1000
+XYZ2 1500
+XYZ3 2312
+...
+XYZI 1000
+XYZJ 1000
+
+Assuming the price for each of those stocks on the top is $1, $2, and $3, and the stocks at the bottom are either invalid or runs into error when fetching.
+Then the output would look like:
+
+Symbol  Shares  Net Asset Value
+--------------------------------
+XYZ1  	1000		$1000.00
+XYZ2		1500		$3000.00
+XYZ3  	2312  	$6936.00
+...
+Total       $.....total of all the net asset values...
+
+Errors:
+XYZI  Invalid stock symbol
+XYZJ  Error reaching the network
+
+You may obtain the stock price from the URL http://ichart.finance.yahoo.com/table.csv?s=SYMBOL where SYMBOL should be replaced by a symbol.
+The second line of the output from this URL is a set of numbers. The number past the last comma is the value you want to use.

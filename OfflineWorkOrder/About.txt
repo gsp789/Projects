@@ -14,5 +14,5 @@ When a user enters a data and clicks on save, the data is sent to the server and
 
 If the device is not connected to the network, the data is stored locally on the device. Next time the user comes back to the application or saves a new work order, the stored data is transmitted to the server.
 
-The above is the client side. For the server side, create a node.js application that will receive the data from the client side and simply display it on the console.
+The above is the client side. For the server side, create a application that will receive the data from the client side and simply display it on the console.
 
