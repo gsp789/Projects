@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<p>Click within the canvas to start. Then move paddle to hit the balls</p>
+	<p id="timer">Timer: 00:00</p>
+	<span style="color:red" id="gamestatus"></span>
+	<br/>
+	<canvas id="gamecanvas" width="500" height="400">If you see this message, sorry canvas is not supported.</canvas>
+  
+		<script type="text/javascript" src="javascripts/canvas/Box.js" ></script>		
+		<script type="text/javascript" src="javascripts/canvas/Ball.js" ></script>
+		<script type="text/javascript" src="javascripts/canvas/Pad.js" ></script>
+		<script type="text/javascript" src="javascripts/canvas/timer.js" ></script>
+		<script type="text/javascript" src="javascripts/logic/calculations.js" ></script>
+		<script>          
+			draw(document.getElementById('gamecanvas')); 
+			window.addEventListener('mousemove', movePad, false);
+			
+			window.addEventListener('touchmove', touchmovePad, false);
+			registerHandleEvents(document.getElementById('gamecanvas'));
+		</script>
+	</body>
+</html>
