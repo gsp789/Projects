@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" manifest="workordermanifest.appcache">
+  <head>
+    <title>Public Works Department</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="/external/jquerydatepicker/jquery-ui.css" />
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+	<script type="text/javascript" src="/javascripts/workorder.js" ></script>
+	<script type="text/javascript" src="/external/modernizr.js"></script>
+	<script src="/external/jquerydatepicker/external/jquery/jquery.js"></script>
+	<script src="/external/jquerydatepicker/jquery-ui.min.js"></script> 
+	<script src="/external/bootstrap.min.js"></script>
+	
+  </head>
+  <body>
+	<header id="logo">
+		<h1>Create Work Order</h1>
+	</header>
+	<br/>
+	<section id="content">
+		
+		<h2> Work Order Details </h2>
+		<form role="form" class="form-horizontal" id = "workorderdetails" onsubmit="return checkFormValidation(event, this, localStorage, jQuery)" method="post">
+			
+			
+			<aside style="margin-right:0px" class="form-group">
+				<label class="control-label col-sm-5">Work Description</label>
+				<aside class="col-sm-6">
+					<textarea name="workdescription" id="workdescription" rows="5" cols="23" maxlength="300" placeholder="work description here" autofocus autocomplete="off" required></textarea>
+				</aside>
+			</aside>
+			
+			<aside style="margin-right:0px" class="form-group">
+				<label class="control-label col-sm-5">Work Location</label>
+				<aside  class="col-sm-6">
+					<output id="worklocationoutput" name="worklocationoutput" ></output>
+					<input type="hidden" id="worklocation" name="worklocation"></input>
+					<button id="getlocation" type="button" class="buttonclass bold" onclick="getWorkLocation(navigator, this, document.getElementById('worklocation'), document.getElementById('worklocationoutput'), document.getElementById('worklocationerror'))">Get Location</button>
+					</p>
+					<output id="worklocationerror" name="worklocationerror" class = "error" ></output>
+				</aside>
+			</aside>
+			
+			<aside style="margin-right:0px" class="form-group">
+				<label class="control-label col-sm-5">Date of Creation</label>
+				<aside class="col-sm-6">
+					<input type="date" name="creationdate" id="creationdate" size="30" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" placeholder="mm/dd/yyyy" autocomplete="off" required ></input>
+				</aside>
+			</aside>
+			
+			<aside style="margin-right:0px" class="form-group">
+				<label class="control-label col-sm-5">Created By</label>
+				<aside class="col-sm-6">
+					<input type="input" name="creatorname" id="creatorname" size="30" placeholder="Full Name" autocomplete="off" required></input>
+				</aside>
+			</aside>
+			
+			<aside style="margin-right:0px" class="form-group">
+				<label class="control-label col-sm-5">Severity</label>
+				<aside class="col-sm-6">
+					<select name="severity" required id="severity">
+						<option value=""></option>
+						<option value="Minor">Minor</option>
+						<option value="Major">Major</option>
+						<option value="Urgent">Urgent</option>
+					</select>
+				</aside>
+			</aside>
+			<aside style="margin-right:0px" class="form-group">
+				<aside class = "success">
+					<output class="success-message" id="outMessage" name="outMessage"></output>
+				</aside>
+			</aside>
+			<aside style="margin-right:0px" class="form-group"> 
+				<aside  class="col-sm-offset-5 col-sm-6"  id="formsubmit">
+					<button id="save" name="save" type="submit" class="btn btn-primary">Save</button>
+				</aside>
+			</aside>
+			
+		</form>
+	</section>
+	<footer id="copyright">
+	<br/>
+	<hr></hr>
+	<p>&copy; All Rights Reserved: gampa_panchanatheeswaran</p>
+	</footer>
+	<script>
+		defaultCreationDate(document.getElementById('creationdate'));
+		populateCreatorName(document.getElementById('workorderdetails'));
+		checkIfConnected(document.getElementById('workorderdetails'), localStorage, jQuery);
+	</script>
+  </body>  
+</html>

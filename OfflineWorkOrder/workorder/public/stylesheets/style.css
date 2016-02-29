@@ -1,0 +1,88 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header#logo
+{
+	width : 100%;
+	border : 2px solid black;
+	border-radius : 20px;
+}
+
+header#logo h1
+{
+	text-align : center;
+}
+section#content
+{
+	float : left;
+	width : 100%;
+	tex-align : center;
+}
+
+section#content h2
+{
+	text-align : center;
+}
+
+
+
+textarea[name=workdescription]
+{
+	border-radius : 10px;
+	resize : none;
+	border: 2px solid grey;
+}
+
+input
+{
+	border-radius : 20px;
+	border: 2px solid grey;
+}
+
+aside#formsubmit
+{
+	padding-top : 10px;
+}
+
+footer#copyright
+{
+	clear : both;
+}
+
+.buttonclass
+{
+	border: 2px solid grey;
+	border-radius: 10px;
+}
+
+.col-sm-5 {
+	padding-left:5px;
+}
+
+.bold
+{
+	font-weight: bold;
+}
+
+.error
+{
+	color: red;
+	font-weight: bold;
+}
+aside.success
+{
+	width : 100%
+}
+.success-message
+{
+	color: green;
+	font-weight: bold;
+	font-size: 200%;
+	text-align : center;
+	width : 100%
+}

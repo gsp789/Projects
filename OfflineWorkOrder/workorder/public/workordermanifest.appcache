@@ -1,0 +1,17 @@
+CACHE MANIFEST
+#VERSION 1
+
+CACHE:
+/javascripts/workorder.js
+/stylesheets/style.css
+/stylesheets/bootstrap.min.css
+/external/modernizr.js
+/external/jquerydatepicker/jquery-ui.css
+/external/jquerydatepicker/external/jquery/jquery.js
+/external/jquerydatepicker/jquery-ui.min.js
+/external/bootstrap.min.js
+
+FALLBACK:
+
+NETWORK:
+*
