@@ -1,0 +1,14 @@
+Design and implement a program that will simulate an electronic circuit.
+A circuit may have different components, like AND, OR, NOT, etc.
+
+A NOT will take one input and produce one output, which is the negation of the input.
+An AND will take two input and produce an output of 1 only if both the input are 1. 0 otherwise.
+An OR will take two input and produce an output of 1 if either of the input is 1. 0 otherwise.
+
+If an input is unconnected to an output, its value can be set to 0 or 1 by the user. If no value is set, it's assumed to be 0.
+
+Design the program so the user can open an existing circuit or create a new one. They can place components of
+different type (more types may be added later) and connect them. The user can also click on a simulate button.
+When the simulation is on, any unconnected output of any component on the circuit should display the current state
+of the output. You may simulate the circuit on a clock tick on 1-second interval.
+
